@@ -1,0 +1,84 @@
+doctype 5
+
+include common/moreButton
+
+html
+  head
+    title #{title}
+    meta(name='description', content='Vilken av Sveriges journalister är hetast just nu? kolla här!')
+    meta(name='keywords', content='topplista, journalister, journalist, journalisttoppen, nyheter, artiklar, artikel')
+
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Cinzel')
+
+    script(src='http://code.jquery.com/jquery-1.9.1.min.js')
+    script(src='/js/bootstrap.min.js')
+    script(src='/js/script.js')
+    link(rel='shortcut icon', href='/favicon.gif')
+
+  body
+
+    #fb-root
+
+    script
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
+
+    .container
+
+      a(href='/').page-head
+        h1.centered Journalisttoppen
+
+      div(style="border-bottom: 1px solid black; margin-bottom: 50px")
+
+      .row.nav-row
+        .span3
+          a(href='/journalister').btn.btn-large.btn-block
+            i.icon-signal
+            |  Journalister
+        .span3
+          a(href='/artiklar').btn.btn-large.btn-block
+            i.icon-signal
+            |  Artiklar
+        .span3
+          a(href='/sajter').btn.btn-large.btn-block
+            i.icon-signal
+            |  Sajter
+        .span3
+          a(href='/rosta').btn.btn-large.btn-block
+            i.icon-thumbs-up
+            |  Rösta
+
+
+
+      block content
+
+
+      .page-foot
+        div.pull-left
+          div(data-href='http://journalisttoppen.se', data-layout='button_count', data-width='200').fb-like
+        p.pull-right
+          a(href='http://branch.com/b/journalisttoppen-feedback', target='_blank').muted Ge feedback
+          |&nbsp;|&nbsp;
+          a(href='http://twitter.com/duveborg', target='_blank').muted duveborg@twitter, kontakta mig!
+
+
+
+
+    script(type='text/javascript')
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39093696-1']);
+      _gaq.push(['_trackPageview']);
+         (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();

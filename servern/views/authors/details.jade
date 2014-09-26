@@ -1,0 +1,50 @@
+extends ../layout
+
+block content
+
+  .row-fluid
+    .span12
+      ul.breadcrumb
+        li
+          a(href='/journalister') Journalister
+          span.divider /
+        li
+          a(href='/sajter/' + details.site)= details.site
+          span.divider /
+        li.active= details.author
+
+
+  .row-fluid
+
+    .span3.journalist-image
+      a(href='http://www.google.com/search?tbm=isch&q=' + details.author + ' ' + details.site, target='_blank').thumbnail
+        img(src=decodeURIComponent(details.authorImage.url || details.authorImage), title='Bilden var den första som kom upp när man bildgooglade journalisten och tidningsnamnet')
+      dl.dl-horizontal
+        dt Betyg:
+        dd
+          strong #{details.avg.toFixed(1)}
+          /5
+        dt Antal röster:
+        dd #{details.count}
+
+    .span9
+
+      .page-header
+        h2 #{details.author}&nbsp;
+          span.muted -&nbsp;
+          a(href='/sajter/' + details.site).muted #{details.site}
+
+      .pull-left
+        include ../common/filtering
+
+      .clearfix
+
+      table.table.table-striped.table-hover
+        thead
+          th.span1 #
+          th Artikel
+          th.span2 Snittbetyg
+          th.span2 Röster
+        tbody.target
+          include detailsRows
+      mixin moreButton(baseUrl, '.target', items.length, 1)

@@ -1,0 +1,47 @@
+extends ../layout
+
+block content
+
+  .row-fluid
+    .span12
+      ul.breadcrumb
+        li
+          a(href='/sajter') Sajter
+          span.divider /
+        li.active= req.params.site
+
+  .page-header
+    .pull-right
+      include ../common/filtering
+    h2= req.params.site
+
+  .row-fluid
+    .span6
+
+      h3 Artiklar
+
+      table.table.table-striped.table-hover
+        thead
+          th.span1 #
+          th Artikel
+          th.span2 Snittbetyg
+          th.span2 Röster
+        tbody.article-target
+          include ../articles/listRows
+
+      mixin moreButton('/sajter/' + req.params.site + '/artiklar', '.article-target', articleItems.length)
+
+    .span6
+
+      h3 Journalister
+
+      table.table.table-striped.table-hover
+        thead
+          th.span1 #
+          th Journalist
+          th.span2 Snittbetyg
+          th.span2 Röster
+        tbody.author-target
+          include ../authors/listRows
+
+      mixin moreButton('/sajter/' + req.params.site + '/journalister', '.author-target', authorItems.length)

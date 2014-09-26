@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+
+  .page-header
+    .pull-right
+      include ../common/filtering
+    h2 Topplista - Artiklar
+
+  table.table.table-striped.table-hover
+    thead
+      th.span1 #
+      th Artikel
+      th.span2 Snittbetyg
+      th.span2 Röster
+    tbody.target
+      include listRows
+  mixin moreButton(baseUrl, '.target', articleItems.length, 1)

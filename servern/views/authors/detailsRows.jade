@@ -1,0 +1,9 @@
+each item in items
+  tr
+    td.count
+    td
+      a(href=item._id, title=item._id, target='_blank') #{item._id}
+    td
+      strong #{item.avg.toFixed(1)}
+      /5
+    td #{item.count}

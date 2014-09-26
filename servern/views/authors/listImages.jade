@@ -1,0 +1,39 @@
+extends ../layout
+
+
+block content
+
+  .page-header
+    .pull-right
+      include ../common/filtering
+    h2 Topplista - Journalister
+
+
+    ul.thumbnails.journalister-thumbnails
+      li.span3
+        each item, i in items
+          - if(i%4 == 0){
+            a(href='/journalister/' + item.site + '/'+ encodeURIComponent(item._id), title=item._id + ', ' + item.site).thumbnail
+              img(src=decodeURIComponent(item.authorImage.url || item.authorImage))
+          - }
+
+      li.span3
+        each item, i in items
+          - if((i+3)%4 == 0){
+            a(href='/journalister/' + item.site + '/'+ encodeURIComponent(item._id), title=item._id+ ', ' + item.site).thumbnail
+              img(src=decodeURIComponent(item.authorImage.url || item.authorImage))
+          - }
+
+      li.span3
+        each item, i in items
+          - if((i+2)%4 == 0){
+            a(href='/journalister/' + item.site + '/'+ encodeURIComponent(item._id), title=item._id+ ', ' + item.site).thumbnail
+              img(src=decodeURIComponent(item.authorImage.url || item.authorImage))
+          - }
+
+      li.span3
+        each item, i in items
+          - if((i+1)%4 == 0){
+            a(href='/journalister/' + item.site + '/'+ encodeURIComponent(item._id), title=item._id+ ', ' + item.site).thumbnail
+              img(src=decodeURIComponent(item.authorImage.url || item.authorImage))
+          - }

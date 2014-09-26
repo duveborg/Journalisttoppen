@@ -1,0 +1,53 @@
+.toppen-rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    float: left;
+}
+.toppen-rating > span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+    cursor: pointer;
+    font-size: 35px;
+    text-shadow: 1px 1px 5px gray;
+}
+.toppen-rating > span:hover:before,
+.toppen-rating > span:hover ~ span:before {
+    content: "\2605";
+    position: absolute;
+    color: rgba(254,191,1,1);
+}
+
+#journalisttoppen {
+    border: 0;
+}
+
+.toppen {
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+
+    overflow: hidden;
+    padding: 20px;
+
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+
+    /*background: -webkit-linear-gradient(top, rgba(242,245,246,1) 0%,rgba(227,234,237,1) 37%,rgba(200,215,220,1) 100%); mörkgrå*/
+    /*background: -webkit-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); blå*/
+    border-radius: 3px;
+    font-family: Arial,Helvetica,Verdana,Geneva,sans-serif;
+    border: 1px solid rgb(223, 223, 223);
+    position: relative;
+}
+
+.toppen-site-link {
+    color: rgb(214, 214, 214);
+    font-size: 14px;
+    text-decoration: none;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+}
+
+.toppen-site-link:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,18 @@
+    #fb-root
+    script
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
+
+    #articleModal.modal.hide.fade
+      .modal-header
+        a(href='', target='_blank').btn.btn-block.btn-articlelink.btn-inverse Till artikeln!
+      .modal-body
+
+      .modal-footer
+        button(data-dismiss='modal').btn Stäng

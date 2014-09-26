@@ -1,0 +1,18 @@
+
+
+Tidning
+- Namn
+- Url?
+
+
+Artikel
+- Tidningsid
+- Journalistid
+- Betyg: Sanningsenlig, elakhet, 
+
+Journalist
+- Namn
+- Epost
+
+
+

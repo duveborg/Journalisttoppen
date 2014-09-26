@@ -1,0 +1,50 @@
+extends ../layout
+
+block content
+
+  .row-fluid
+
+    .span12
+      a(href='https://chrome.google.com/webstore/detail/journalisttoppen/dnhpjfncfbdapbppecpklfdbdgkmnpnb', target='_blank').btn.btn-inverse.btn-large.btn-block Klicka här för att installera Journalisttoppens röstnings-plugin för Chrome
+
+  .row-fluid
+    .span6
+
+      .page-header
+        h2 Så här röstar du
+
+      div(style='margin-bottom: 40px')
+        h3 1. Ladda ner webbläsaren&nbsp;
+          a(href='https://www.google.com/intl/en/chrome/browser/', target='_blank') Chrome
+        h3 2. Installera
+          a(href='https://chrome.google.com/webstore/detail/journalisttoppen/dnhpjfncfbdapbppecpklfdbdgkmnpnb', target='_blank') tillägget
+            strong  'Journalisttoppen'
+          |  från Chrome Store
+
+        h3 3. Hitta en artikel och rösta
+
+      .alert.alert-info
+        p Sidor som stöds är för tillfället:
+        ul
+          each site in sites
+            li= site
+
+    .span6
+      .page-header
+        h2 Röster
+
+      table.table.table-striped.table-hover
+        thead
+          th När
+          th Artikel
+          th Journalist
+          th Betyg
+        tbody
+          each item in items
+            tr
+              td= item.datetime.since()
+              td
+                a(href=item.article, target='_blank')= item.article
+              td
+                a(href='journalister/' + item.site + '/' + encodeURIComponent(item.author))= item.author
+              td= item.rating

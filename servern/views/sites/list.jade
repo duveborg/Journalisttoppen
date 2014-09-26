@@ -1,0 +1,28 @@
+extends ../layout
+
+
+block content
+
+  .page-header
+    .pull-right
+      include ../common/filtering
+    h2 Topplista - Sajter
+
+  table.table.table-striped.table-hover
+    thead
+      th.span1 #
+      th Sida
+      th.span2 Snittbetyg
+      th.span2 Röster
+    each item in items
+      tr
+        td.count
+        td
+          a(href='/sajter/' + item._id) #{item._id}
+        td
+          strong #{item.avg.toFixed(1)}
+          /5
+        td #{item.count}
+
+
+

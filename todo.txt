@@ -1,0 +1,5 @@
+todo innan release
+
+extension på market
+köra om alla bilder, med face?
+felhantering, 404 etc

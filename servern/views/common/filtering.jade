@@ -1,0 +1,15 @@
+
+form.form-inline.form-filter
+    select(name='tid').input-medium
+      option(value='0') All tid
+      option(value='1') Senaste dygnet
+      option(value='7') Senaste veckan
+      option(value='30') Senaste månaden
+      option(value='90') Senaste kvartalet
+      option(value='365') Senaste året
+
+    select(title='Sortera efter...', name='sortering').input-medium
+      option(value='-1') Bästa
+      option(value='1') Sämsta
+
+    input(type='text', placeholder='Textsök', title='Tryck enter när du vill söka', name='text').input-medium

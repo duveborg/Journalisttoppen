@@ -1,0 +1,9 @@
+each item in authorItems
+  tr
+    td.count
+    td
+      a(href='/journalister/' + item.site + '/'+ encodeURIComponent(item._id)) #{item._id}
+    td
+      strong #{item.avg.toFixed(1)}
+      /5
+    td #{item.count}

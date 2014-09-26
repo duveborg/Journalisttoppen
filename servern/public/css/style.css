@@ -1,0 +1,86 @@
+
+h1, h2 {
+    /* color: #78CC00; */
+    /*color: #2e6baa;*/
+    font-family: 'Cinzel', serif;
+    color: #9c6;
+}
+
+.container {
+    background: white;
+    box-shadow: 2px 2px 23px;
+    padding: 0 20px;
+}
+
+.centered {
+    text-align: center;
+}
+
+.nav-row .btn {
+    margin-bottom: 20px;
+}
+
+tbody
+{
+    counter-reset: countrow;
+}
+
+td.count:first-child:after {
+    counter-increment: countrow;
+    content: counter(countrow);
+}
+
+td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+table {
+    table-layout:fixed;
+}
+
+.journalist-image .thumbnail, .journalist-image dl {
+    display: inline-block;
+    float: right;
+}
+
+.journalist-image dd {
+    text-align: left;
+}
+
+.page-foot {
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.form-filter * {
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.journalister-thumbnails .thumbnail{
+    margin-bottom: 15px;
+}
+
+body {
+    font-family: 'Cinzel', serif;
+}
+
+.page-head h1{
+    color: black; /*#2e6baa*/
+    font-family: 'Cinzel', serif;
+    padding: 40px;
+    font-size: 50px;
+}
+
+.page-head:hover {
+    text-decoration: none;
+}
+
+.table-authors td{
+    vertical-align: middle;
+}
+

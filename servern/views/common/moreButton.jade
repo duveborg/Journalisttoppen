@@ -1,0 +1,4 @@
+
+mixin moreButton(updateBaseUrl, loadTarget, listSize, modifyUrl)
+  - if(req.filters.page * req.pageSize <= listSize)
+    a(href=updateBaseUrl + "/" + (req.filters.page + 1), data-page=req.filters.page, data-base-url=updateBaseUrl, data-load-target=loadTarget, modify-url=modifyUrl).btn.btn-block.btn-more Visa fler..

@@ -1,0 +1,12 @@
+each item in items
+  tr
+    td.count
+    td
+      img(src=item.authorImage ? (item.authorImage.tbUrl || item.authorImage) : '', style='width: 30px; height: 30px; margin-right: 6px').img-polaroid
+      a(href='/journalister/' + item.site + '/'+ encodeURIComponent(item._id)) #{item._id}
+      span.muted  -&nbsp;
+        a(href='/sajter/' + item.site).muted #{item.site}
+    td
+      strong #{item.avg.toFixed(1)}
+      /5
+    td #{item.count}
